@@ -16,3 +16,6 @@ This branch contains all the code necessary to show the Bridge Index screen. We 
 
 ## Step3
 This branch contains all the code necessary to transition from the Bridge Index screen to the Bridge Detail screen. We wrap our custom UIViewController subclass in a UINavigationController and push the detail controller when the user taps a table row.
+
+## Step4
+This branch contains all the code necessary to wrap our app in a UITabBarController, display a mapView with annotations, and send a user to the Bridge Detail View Controller upon tapping on a callout accessory view.
