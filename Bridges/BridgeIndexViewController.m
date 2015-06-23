@@ -34,6 +34,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITableViewDatasource
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.bridges.count;
@@ -54,16 +56,27 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BridgeDetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"BridgeDetail"];
+    Bridge *bridge = self.bridges[indexPath.row];
+    detail.bridge = bridge;
+
+    [self.navigationController pushViewController:detail animated:true];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    BridgeDetailViewController *detail = (BridgeDetailViewController *)[segue destinationViewController];
-
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    Bridge *selectedBridge = self.bridges[indexPath.row];
-    detail.bridge = selectedBridge;
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    BridgeDetailViewController *detail = (BridgeDetailViewController *)[segue destinationViewController];
+//
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    Bridge *selectedBridge = self.bridges[indexPath.row];
+//    detail.bridge = selectedBridge;
+//}
 
 @end

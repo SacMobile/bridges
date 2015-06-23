@@ -10,4 +10,8 @@
 
 @implementation Bridge
 
+- (NSString *)title
+{
+    return self.name;
+}
 @end

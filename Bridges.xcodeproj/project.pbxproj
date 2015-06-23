@@ -19,6 +19,7 @@
 		0A5F0F601AEF4C61003202AD /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F0F5F1AEF4C61003202AD /* Bridge.m */; };
 		0A5F0F621AEF4CD4003202AD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5F0F611AEF4CD4003202AD /* MapKit.framework */; };
 		0A5F0F651AEF51F1003202AD /* BridgeIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F0F641AEF51F1003202AD /* BridgeIndexViewController.m */; };
+		0AB2CB771B3927C7008A9BBF /* BridgeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB2CB761B3927C7008A9BBF /* BridgeMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		0A5F0F611AEF4CD4003202AD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0A5F0F631AEF51F1003202AD /* BridgeIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeIndexViewController.h; sourceTree = "<group>"; };
 		0A5F0F641AEF51F1003202AD /* BridgeIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeIndexViewController.m; sourceTree = "<group>"; };
+		0AB2CB751B3927C7008A9BBF /* BridgeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeMapViewController.h; sourceTree = "<group>"; };
+		0AB2CB761B3927C7008A9BBF /* BridgeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				0A13564F1AEF6C0A00431F6A /* BridgeTableViewCell.m */,
 				0A1356511AEF6FBF00431F6A /* BridgeDetailViewController.h */,
 				0A1356521AEF6FBF00431F6A /* BridgeDetailViewController.m */,
+				0AB2CB751B3927C7008A9BBF /* BridgeMapViewController.h */,
+				0AB2CB761B3927C7008A9BBF /* BridgeMapViewController.m */,
 			);
 			path = Bridges;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB2CB771B3927C7008A9BBF /* BridgeMapViewController.m in Sources */,
 				0A5F0F601AEF4C61003202AD /* Bridge.m in Sources */,
 				0A1356501AEF6C0A00431F6A /* BridgeTableViewCell.m in Sources */,
 				0A5F0D6C1AEF4220003202AD /* AppDelegate.m in Sources */,

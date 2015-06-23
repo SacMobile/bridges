@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface Bridge : NSObject
+@interface Bridge : NSObject <MKAnnotation>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *overview;
@@ -17,5 +17,7 @@
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) NSString *length;
 @property (nonatomic, strong) NSArray *imagePaths;
+
+@property (nonatomic, copy, readonly) NSString *title;
 
 @end

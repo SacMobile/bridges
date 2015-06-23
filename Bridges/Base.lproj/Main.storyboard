@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4wo-eF-i7m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ccW-3f-Tro">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Bridges of Sacramento County-->
@@ -32,7 +32,7 @@
                                                     <rect key="frame" x="124" y="8" width="243" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OdE-lc-zjZ">
@@ -56,7 +56,6 @@
                                             <outlet property="bridgeImageView" destination="HLw-tC-lbi" id="JWe-qr-aFf"/>
                                             <outlet property="bridgeName" destination="A1x-Hn-Bz3" id="eHa-Cc-Zes"/>
                                             <outlet property="bridgeYear" destination="08h-an-SYc" id="B9g-M1-cfn"/>
-                                            <segue destination="RRu-bW-O1B" kind="push" identifier="detailSegue" id="TQP-63-bmv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -73,12 +72,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948.5" y="352.5"/>
+            <point key="canvasLocation" x="1480.5" y="352.5"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="w6q-j4-EPW">
+            <objects>
+                <navigationController id="zmc-de-EKE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="tnS-jO-0YH"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zZZ-Qw-YHO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LSk-jf-OcJ" kind="relationship" relationship="rootViewController" id="AhV-Ee-NzV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMs-EV-Y1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980.5" y="1254.5"/>
+        </scene>
+        <!--Bridge Map View Controller-->
+        <scene sceneID="YEr-uR-V9K">
+            <objects>
+                <viewController id="LSk-jf-OcJ" customClass="BridgeMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F1n-Kd-acY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="fjF-Yh-hCz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                    </view>
+                    <navigationItem key="navigationItem" id="WMx-R8-uur"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="map" destination="fjF-Yh-hCz" id="5CJ-Ut-2w9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwe-eP-WSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480.5" y="1254.5"/>
         </scene>
         <!--Bridge Detail View Controller-->
         <scene sceneID="liV-zu-Jaw">
             <objects>
-                <viewController id="RRu-bW-O1B" customClass="BridgeDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BridgeDetail" id="RRu-bW-O1B" customClass="BridgeDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O8Z-d8-Bte">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,35 +134,35 @@
                                 <rect key="frame" x="16" y="114" width="343" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year Built" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WRN-fk-KIg">
                                 <rect key="frame" x="216" y="167" width="75" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QIL-cF-Kth">
                                 <rect key="frame" x="236" y="196" width="343" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="25n-Hp-KCC">
                                 <rect key="frame" x="58" y="167" width="55" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Length" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d9x-Tb-OUx">
                                 <rect key="frame" x="61" y="194" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7af-0t-f5i">
@@ -142,12 +183,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OwN-rE-oP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1403.5" y="348.5"/>
+            <point key="canvasLocation" x="1935.5" y="348.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Bridges-->
         <scene sceneID="rN6-hB-cAF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4wo-eF-i7m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bridges" id="khr-HT-wR8"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pGh-qc-ukM">
@@ -161,7 +203,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGs-sd-xqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="449" y="353"/>
+            <point key="canvasLocation" x="980.5" y="352.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="B1d-7Z-lnP">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ccW-3f-Tro" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="2un-kH-9lD">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="4wo-eF-i7m" kind="relationship" relationship="viewControllers" id="sqM-Ei-NgN"/>
+                        <segue destination="zmc-de-EKE" kind="relationship" relationship="viewControllers" id="MhZ-Z0-H5Y"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0vX-FQ-jaG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421" y="352"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
