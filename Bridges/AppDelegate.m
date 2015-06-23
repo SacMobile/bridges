@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Bridges" ofType:@"plist"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"bridge_data/Bridges" ofType:@"plist"];
     NSArray *bridges = [[NSArray alloc] initWithContentsOfFile:filePath];
     
     NSMutableArray *mBridges = [NSMutableArray arrayWithCapacity:bridges.count];
